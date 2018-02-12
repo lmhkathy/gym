@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "sale <- read.csv(\"F:/研究生/实训/健身房/代码/sale/sale.csv\",header = T,encoding = \"UTF-8\")\n#连接数据库\nlibrary(RODBC)\ncon = odbcConnect(\"gym\")\nsqlTables(con)\nsale <- sqlQuery(con,\"select * from sale\",Encoding(\"UTF-8\"))\n",
+    "created" : 1517831410954.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3892071370",
+    "id" : "508F3295",
+    "lastKnownWriteTime" : 1517837363,
+    "last_content_update" : 1517837363315,
+    "path" : "F:/研究生/实训/健身房/代码/sale/sale.R",
+    "project_path" : "sale.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

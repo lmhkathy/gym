@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "set.seed(1)\nout <- data.frame(x1=runif(3)*10,x2=c('a','b','c'))\nout <- format(out,digits = 3)\nout\n\ncat(paste(out$x1,out$x2,sep = '='),sep = '\\n')\n\nx<-readline()\nx <- scan()\n\noutput <- file('output.txt')\ncat(1:100,sep = '\\t',file = output)\ncat(letters,file = output,append = T)\nclose(output)\n\n\npath <- .libPaths()[1]\ndoc.names <- dir(path)\ndoc.path <- sapply(doc.names,function(names) paste(path,names,'DESCRIPTION',sep = '/'))\ndoc.names <- dir(path,pattern = \"DESCRIPTION\",recursive = T)\nwrite.csv(head(iris),\"iris.csv\",row.names = F,quote = F)\nwrite.table(head(iris),\"iris.xls\")\n\nxlsx::write.xlsx(iris,\"iris.xlsx\")\n\n\n\n\n\n#连接数据库\nlibrary(RODBC)\ncon = odbcConnect(\"mysql\")\nsqlTables(con)\nsqlQuery(con,\"select * from iris\")\nsqlSave(con,cars,\"cars\")\n\n\n\nlibrary(XML)\nurl <- 'http://www.federalreserve.gov/releases/h10/hist/dat00_al.htm'\ntables <- readHTMLTable(url,\n                        stringsAsFactors = FALSE,\n                        header=F)\ndata <- tables[[3]]\n\n\n\n\n\n\n\n\n\n#dplyr\ndf <- data.frame(\n  color = c(\"blue\", \"black\", \"blue\", \"blue\", \"black\"),\n  value = 1:5)\ntbl <- tbl_df(df)\ntbl\n\n\n\n\n\n",
+    "created" : 1517834364931.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "824977809",
+    "id" : "250D5978",
+    "lastKnownWriteTime" : 1508330720,
+    "last_content_update" : 1508330720,
+    "path" : "F:/研究生/R/course2.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
